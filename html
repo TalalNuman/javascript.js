@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+form{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 45px 45px 45px 45px 45px;
+    column-gap: 30px;
+    row-gap: 0px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    
+}
+body{
+    display: flex;
+    background-color: rgb(103, 103, 163);
+}
+    </style>
+</head>
+<body>
+    <form action="onsubmit="return validationform()">
+        <input type="text" placeholder="Name" id="Name"><br>
+        <p id="nameERROR"  class="erroe"></p>
+        <input type="email" placeholder="Email" id="email"><br>
+        <p id="emaERROR" class="error"></p>
+        <input type="phone" placeholder="Phone" id="phone"><br>
+        <p id="phoERROR" class="error"></p>
+        <input type="password" placeholder="password" id="password"><br>
+        <p id="passERROR" class="error"></p>
+         <input type="SUBMIT"><br>
+    </form>
+        
+
+        
+        <script>
+            let name = document.getElementByI("Name");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let password = document.getElementById("password");
+ let flag = 1;
+
+function validationform(){
+if(Name.value==""){
+    document.getElementById("nameERROR").innerHTML="please fill This section";
+}
+else if(Name.value.lenght<3){
+    document.getElementById("nameERROR").innerHTML="user name required four digits";
+}else{
+    document.getElementById("nameERROR").innerHTML = "";
+    flag = 1;
+}
+
+
+
+if(email.value==""){
+    document.getElementById("emaERROR").innerHTML="please fill This section";
+    flag =0;
+}
+else if(email.value.lenght<3){
+    document.getElementById("emaERROR").innerHTML="user name required four digits";
+    flag =0;
+}else{
+    document.getElementById("emaERROR").innerHTML = "";
+    flag = 1;
+}
+
+
+
+if(phone.value==""){
+    document.getElementById("phoERROR").innerHTML="please fill This section";
+    flag =0;
+}
+else if(phone.value.lenght<3){
+    document.getElementById("phoERROR").innerHTML="user name required four digits";
+    flag =0;
+}else{
+    document.getElementById("phoERROR").innerHTML = "";
+    flag = 1;
+}
+
+
+
+if(password.value==""){
+    document.getElementById("passERROR").innerHTML="please fill This section";
+    flag =0;
+}
+else if(password.value.lenght<3){
+    document.getElementById("passERROR").innerHTML="user name required four digits";
+    flag =0;
+}
+else{
+    document.getElementById("passERROR").innerHTML = "";
+    flag = 1;
+}
+if (flag){
+    return true;
+}
+else{
+    return false;
+}
+}
+        </script>
+</body>
+</html>
